@@ -182,7 +182,7 @@
 
 <div class="post">
     <a href="/2025/03/16/%E6%96%B0%E5%BB%BA%E6%96%87%E6%9C%AC%E6%96%87%E6%A1%A3/">
-        <h2 class="post-title">C++ FastIO</h2>
+        <h2 class="post-title"></h2>
     </a>
     <div class="category-and-date">
         
@@ -198,10 +198,20 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p><a target="_blank" rel="noopener" href="https://github.com/argvchs/fastio">FastIO</a> 是一个快读快写库。</p>
-<p>支持基本类型读写，指针地址写入，和 <code>cin</code> <code>cout</code> 用法类似。</p>
-<p>虽然相对于原版函数式 <code>fread</code> 快读会有点慢，但还是比 <code>getchar</code> <code>putchar</code> 要快的。</p>
-<h2 id="1-目录解释"><a href="#1-目录解释" class="headerlink" title="1. 目录解释"></a>1. 目录解释</h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fastio.cpp          # 测试代码&lt;br /&gt;</span><br><span class="line">fastio.hpp          # FastIO 库源代码&lt;br /&gt;</span><br><span class="line">fastio.beta.hpp     # FastIO 库源代码，使用 C++20&lt;br /&gt;</span><br><span class="line">fastio.in           # 读写测试数据&lt;br /&gt;</span><br></pre></td></tr></table></figure>
+            <!-- more --
+---
+title: C++ FastIO
+---
+
+[FastIO](https://github.com/argvchs/fastio) 是一个快读快写库。
+
+支持基本类型读写，指针地址写入，和 `cin` `cout` 用法类似。
+
+虽然相对于原版函数式 `fread` 快读会有点慢，但还是比 `getchar` `putchar` 要快的。
+
+## 1\. 目录解释
+
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fastio.cpp          # 测试代码&lt;br /&gt;</span><br><span class="line">fastio.hpp          # FastIO 库源代码&lt;br /&gt;</span><br><span class="line">fastio.beta.hpp     # FastIO 库源代码，使用 C++20&lt;br /&gt;</span><br><span class="line">fastio.in           # 读写测试数据&lt;br /&gt;</span><br></pre></td></tr></table></figure>
 
 <h2 id="2-使用"><a href="#2-使用" class="headerlink" title="2. 使用"></a>2. 使用</h2><ul>
 <li><p><code>using namespace fastio;</code></p>
@@ -344,6 +354,13 @@
 <p><strong>注意要用 <code>fastio::interface::istream</code> <code>fastio::interface::ostream</code> 来重载。</strong></p>
 <p>以下是重载 <code>std::tuple</code> 的示例程序。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">using namespace fastio;&lt;br /&gt;</span><br><span class="line">template &lt;typename... TS&gt;&lt;br /&gt;</span><br><span class="line">interface::istream &amp;operator&gt;&gt;(interface::istream &amp;is, std::tuple&lt;TS...&gt; &amp;a) &#123;&lt;br /&gt;</span><br><span class="line">    std::apply([&amp;](auto &amp;&amp;...args) &#123; ((is &gt;&gt; args), ...); &#125;, a);&lt;br /&gt;</span><br><span class="line">    return is;&lt;br /&gt;</span><br><span class="line">&#125;&lt;br /&gt;</span><br><span class="line">template &lt;typename... TS&gt;&lt;br /&gt;</span><br><span class="line">interface::istream &amp;operator&gt;&gt;(interface::istream &amp;is, std::tuple&lt;TS...&gt; &amp;&amp;a) &#123;&lt;br /&gt;</span><br><span class="line">    std::apply([&amp;](auto &amp;&amp;...args) &#123; ((is &gt;&gt; args), ...); &#125;, a);&lt;br /&gt;</span><br><span class="line">    return is;&lt;br /&gt;</span><br><span class="line">&#125;&lt;br /&gt;</span><br><span class="line">template &lt;typename... TS&gt;&lt;br /&gt;</span><br><span class="line">interface::ostream &amp;operator&lt;&lt;(interface::ostream &amp;os, std::tuple&lt;TS...&gt; const &amp;a) &#123;&lt;br /&gt;</span><br><span class="line">    std::apply([&amp;](auto &amp;&amp;...args) &#123; ((os &lt;&lt; args &lt;&lt; &#x27; &#x27;), ...); &#125;, a);&lt;br /&gt;</span><br><span class="line">    return os;&lt;br /&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+
             
         </div>
     </div>
